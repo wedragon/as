@@ -192,12 +192,10 @@ def GenH(gendir,os_list):
     counter_list = ScanFrom(os_list,'Counter')
     for id,counter in enumerate(counter_list):
         fp.write('#define COUNTER_ID_%-32s %s\n'%(GAGet(counter,'Name'),id))
-        fp.write('#define %-43s %s\n'%(GAGet(counter,'Name'),id))
     fp.write('#define COUNTER_NUM%-32s %s\n\n'%(' ',id+1))
     id = -1
     for id,alarm in enumerate(alarm_list):
         fp.write('#define ALARM_ID_%-32s %s\n'%(GAGet(alarm,'Name'),id))
-        fp.write('#define %-41s %s\n'%(GAGet(alarm,'Name'),id))
     fp.write('#define ALARM_NUM%-32s %s\n\n'%(' ',id+1))
     fp.write('\n\n')
     fp.write('/* ============================ [ TYPES     ] ====================================================== */\n')
