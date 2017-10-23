@@ -54,6 +54,7 @@ def parse():
         for sched in glob.glob('%s/*'%(cc)):
             for obj in glob.glob('%s/*'%(sched)):
                 for test in glob.glob('%s/*'%(obj)):
+                    if(test[-3:]=='inc'):continue
                     # TODO only need to be executed once
                     #os.system('ln -fsv %s %s/inc'%(os.path.abspath('./Testsuite/cpuxx_comyy/inc'),obj))
                     for ff in glob.glob('%s/*'%(test)):
